@@ -7,16 +7,6 @@
 //
 
 import UIKit
-<<<<<<< Updated upstream
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-=======
 struct HashTagList {
     var title : String
     var tweet : Int
@@ -104,7 +94,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
   
     
->>>>>>> Stashed changes
 
 }
 
