@@ -7,10 +7,33 @@
 //
 
 import UIKit
-struct HashTagList {
-    var title : String
-    var tweet : Int
+/*struct HashTagList {
+    var name : String?
+    var volume : Int?
+    
+    var whole : String?
+    var society : String?
+    var sports : String?
+    var etc : String?
+    }*/
+
+enum HashTagLists {
+    case All
+    case Society
+    case Sports
+    case Etc
+    
+}
+protocol HashTagList{
+    var type: HashTagLists { get }
+    var rowCount : Int { get }
+    var sectionTitle: String { get }
+}
+extension HashTagList {
+    var rowCount : Int {
+        return 1
     }
+}
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
@@ -63,11 +86,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                    as!Sports
         let etccell = TableViewMain.dequeueReusableCell(withIdentifier: "Etc", for: indexPath)as!Etc
     allcell.AllLabel.text = "(#아무노래 챌린지)"
-     societycell.SocietyLabel.text = "(#조국)"
+     societycell.SocietyLabel.text = "(#김정은)"
      sportcell.SportsLabel.text = "(#류현진)"
        etccell.EtcLabel.text = "(#애쉬골드)"
        
-     return societycell 
+     return allcell
             
       
          
