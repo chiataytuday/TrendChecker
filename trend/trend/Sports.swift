@@ -9,7 +9,8 @@
 import UIKit
 
 class Sports : UITableViewCell {
-    
+    var name: String?
+      var volume : Int?
     @IBOutlet weak var SportsLabel: UILabel!
     
 }
