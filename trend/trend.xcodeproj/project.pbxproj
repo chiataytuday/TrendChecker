@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		3F2CC0D223C3195F0018DAA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */; };
 		3F2CC0D523C3195F0018DAA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D323C3195F0018DAA0 /* LaunchScreen.storyboard */; };
 		3F2CC0DD23C319710018DAA0 /* trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CC0DC23C319710018DAA0 /* trend.swift */; };
+		406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B0F23D80FB400FB8B2C /* Trend.swift */; };
+		406A0B1223D80FE100FB8B2C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B1123D80FE100FB8B2C /* Api.swift */; };
+		406A0B1523D8108100FB8B2C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 406A0B1423D8108100FB8B2C /* Alamofire */; };
 		CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */; };
 		CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */; };
 		CE18972B23D710A3003F7885 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18972A23D710A3003F7885 /* All.swift */; };
@@ -32,6 +35,8 @@
 		3F2CC0D423C3195F0018DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2CC0D623C3195F0018DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2CC0DC23C319710018DAA0 /* trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trend.swift; sourceTree = "<group>"; };
+		406A0B0F23D80FB400FB8B2C /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		406A0B1123D80FE100FB8B2C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController1.swift; sourceTree = "<group>"; };
 		CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController2.swift; sourceTree = "<group>"; };
 		CE18972A23D710A3003F7885 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406A0B1523D8108100FB8B2C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 		3F2CC0C723C3195D0018DAA0 /* trend */ = {
 			isa = PBXGroup;
 			children = (
+				406A0B0D23D80F8E00FB8B2C /* API */,
 				3F2CC0C823C3195D0018DAA0 /* AppDelegate.swift */,
 				3F2CC0CA23C3195D0018DAA0 /* SceneDelegate.swift */,
 				3F2CC0CC23C3195D0018DAA0 /* ViewController.swift */,
@@ -88,6 +95,23 @@
 			path = trend;
 			sourceTree = "<group>";
 		};
+		406A0B0D23D80F8E00FB8B2C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				406A0B0E23D80F9C00FB8B2C /* Model */,
+				406A0B1123D80FE100FB8B2C /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		406A0B0E23D80F9C00FB8B2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				406A0B0F23D80FB400FB8B2C /* Trend.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,6 +128,9 @@
 			dependencies = (
 			);
 			name = trend;
+			packageProductDependencies = (
+				406A0B1423D8108100FB8B2C /* Alamofire */,
+			);
 			productName = trend;
 			productReference = 3F2CC0C523C3195D0018DAA0 /* trend.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 3F2CC0BC23C3195D0018DAA0;
+			packageReferences = (
+				406A0B1323D8108100FB8B2C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3F2CC0C623C3195D0018DAA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,9 +191,11 @@
 			files = (
 				CE18973123D7154B003F7885 /* Etc.swift in Sources */,
 				3F2CC0CD23C3195D0018DAA0 /* ViewController.swift in Sources */,
+				406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */,
 				CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */,
 				CE18972D23D7122D003F7885 /* Sports.swift in Sources */,
 				3F2CC0C923C3195D0018DAA0 /* AppDelegate.swift in Sources */,
+				406A0B1223D80FE100FB8B2C /* Api.swift in Sources */,
 				CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */,
 				CE18972B23D710A3003F7885 /* All.swift in Sources */,
 				3F2CC0CB23C3195D0018DAA0 /* SceneDelegate.swift in Sources */,
@@ -366,6 +398,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		406A0B1323D8108100FB8B2C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		406A0B1423D8108100FB8B2C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 406A0B1323D8108100FB8B2C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F2CC0BD23C3195D0018DAA0 /* Project object */;
 }

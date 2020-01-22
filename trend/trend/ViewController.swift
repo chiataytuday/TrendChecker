@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 /*struct HashTagList {
     var name : String?
     var volume : Int?
@@ -114,9 +115,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableViewMain.delegate = self
         TableViewMain.dataSource = self
         /*getTrendsTwitter()*/
+        
+        MyApi.shared.trend { result in
+        print(result)
     }
   
     
-
+    }
 }
 
