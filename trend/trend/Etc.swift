@@ -8,7 +8,7 @@
 
 import UIKit
 class Etc : UITableViewCell {
-    
-    
+      var name: String?
+      var volume : Int?
     @IBOutlet weak var EtcLabel: UILabel!
 }
