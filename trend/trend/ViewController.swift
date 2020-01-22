@@ -17,7 +17,10 @@ import UIKit
     var sports : String?
     var etc : String?
     }*/
-
+class RealTime {
+    var title : String?
+    var volume : Int?
+}
 enum HashTagLists {
     case All
     case Society
@@ -80,7 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 @IBOutlet weak var TableViewMain: UITableView!
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        /*
         let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as!All
         let societycell = TableViewMain.dequeueReusableCell(withIdentifier: "Society", for: indexPath) as!Society
         let sportcell = TableViewMain.dequeueReusableCell(withIdentifier: "Sports", for: indexPath)
@@ -91,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      sportcell.SportsLabel.text = "(#류현진)"
        etccell.EtcLabel.text = "(#애쉬골드)"
        
-     return allcell
+     return allcell*/
             
       
          
