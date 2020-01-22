@@ -9,6 +9,7 @@
 import UIKit
 
 class Society : UITableViewCell {
-    
+     var name: String?
+      var volume : Int?
     @IBOutlet weak var SocietyLabel: UILabel!
 }
