@@ -12,3 +12,4 @@ class Etc : UITableViewCell {
       var volume : Int?
     @IBOutlet weak var EtcLabel: UILabel!
 }
+

@@ -16,20 +16,6 @@ class MyApi: NSObject {
     OAuth oauth_consumer_key="G2DeDOSi7dThLsqA6oApmHJ1U",oauth_token="1218733691335135234-HuJdXlOoWvmx8AcJ3oLLmVpJKbrXJy",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1579667447",oauth_nonce="GBn8wz10ImE",oauth_version="1.0",oauth_signature="ekowH5NlLYAnMWtV%2BLJlYigFdnU%3D"
     """
     
-    func allMenu(completion: @escaping ([CoffeeMenu]) -> Void) { //}, onError: @escaping (Error) -> Void) {
-        let result = [
-            CoffeeMenu(name: "아메리카노", price: 2500),
-            CoffeeMenu(name: "카페라떼", price: 2700),
-            CoffeeMenu(name: "캬라멜 마키아또", price: 3500),
-            CoffeeMenu(name: "아이스 아메리카노", price: 2700),
-            CoffeeMenu(name: "콜드브루", price: 3500),
-            CoffeeMenu(name: "오늘의 커피", price: 3200),
-            CoffeeMenu(name: "초코라떼", price: 3000),
-            CoffeeMenu(name: "딸기 라떼", price: 3000),
-        ]
-        completion(result)
-    }
-    
     func trend(completion: @escaping ([Trend]) -> Void) {
         Alamofire.request("https://api.twitter.com/1.1/trends/place.json", method: .get, parameters: ["id": 23424868], headers: ["Authorization": authorization]).responseData(completionHandler: { response in
             switch response.result {
