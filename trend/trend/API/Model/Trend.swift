@@ -9,10 +9,14 @@
 import Foundation
 
 struct Trend: Codable {
-    var name: String?
+    var name: String
     var url: String?
     var query: String?
     var tweetVolume: Int?
+    var whole : String?
+    var society : String?
+    var sports : String?
+    var etc : String?
     
     enum CodingKeys : String, CodingKey {
         case name
