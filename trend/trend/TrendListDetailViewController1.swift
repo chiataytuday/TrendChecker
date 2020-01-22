@@ -10,12 +10,16 @@ import UIKit
 
 class TrendListDetailViewController1: UIViewController {
 
+    var trendDetail : Trend? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print(self.trendDetail)
+    }
 
     /*
     // MARK: - Navigation
