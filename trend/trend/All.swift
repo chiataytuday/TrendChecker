@@ -9,7 +9,8 @@
 import UIKit
 
 class All : UITableViewCell {
-    
+    var name: String?
+    var volume : Int?
     @IBOutlet weak var AllLabel: UILabel!
     
     
