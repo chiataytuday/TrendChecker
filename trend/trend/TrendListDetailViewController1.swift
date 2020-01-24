@@ -17,13 +17,12 @@ class TrendListDetailViewController1: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-<<<<<<< HEAD
+
     override func viewDidAppear(_ animated: Bool) {
         print(self.trendDetail)
     }
 
-=======
->>>>>>> a00e039a2981ebadc977dbd7bb70c0d41764e412
+
     /*
     // MARK: - Navigation
 

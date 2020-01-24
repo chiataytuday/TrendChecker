@@ -13,11 +13,7 @@ struct Trend: Codable {
     var url: String?
     var query: String?
     var tweetVolume: Int?
-    var whole : String?
-    var society : String?
-    var sports : String?
-    var etc : String?
-    
+
     enum CodingKeys : String, CodingKey {
         case name
         case url
