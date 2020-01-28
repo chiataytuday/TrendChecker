@@ -9,15 +9,7 @@
 import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    
-    
-    
-  
-    
-    
     var trendJson : Array<Dictionary<String, Any>> = []
-   
-   
    /*  func getTrendTwitter() {
           let task = URLSession.shared.dataTask(with: URL(string: "")!) { (data, response, error) in
               
@@ -44,10 +36,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           
           task.resume()
       }
-      
-      
-   
-      
    */
 @IBOutlet weak var TableViewMain: UITableView!
    
@@ -66,16 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
            
     }
     let trendlist:[Trend] = [
-        Trend(name:"#해시태그 이슈"),
-        Trend(name:"#아무노래챌린지"),
-        
-       // Trend(name:
-        
-    
-    
-    
-    
-    
+        Trend(name:"#해시태그이슈"),
+        Trend(name:"#아무노래챌린지")
     ]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trendlist.count
@@ -96,10 +76,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableViewMain.dataSource = self
         /*getTrendsTwitter()*/
         
-      /*  MyApi.shared.trend { result in
+        
+        MyApi.shared.trend { result in
         print(result)
-    }*/
+    }
   
+       
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,7 +91,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let detailController1 = segue.destination as? TrendListDetailViewController1
                 if detailController1 != nil {
                     detailController1!.trendDetail = trendlist
-                    
                 }
             }
         }
@@ -119,6 +100,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             performSegue(withIdentifier: "trendDetail", sender: self.trendlist[indexPath.row])
         }
+    
+    func nowTime(_ tableView: UITableView){
+        let label = UILabel()
+               // 기본 셋팅
+               label.frame.size = CGSize(width: 50, height: 20)
+               label.text = "Hello, world"
+               label.textColor = .black
+               label.center = self.view.center
+
+               // 태그 지정
+               label.tag = 1 // 중요 **
+               let now=NSDate()
+               let dateFormatter = DateFormatter()
+               dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+               label.text=dateFormatter.string(from: now as Date)
+
+               // 화면에 추가
+               self.view.addSubview(label)
+    }
     
 }
 
