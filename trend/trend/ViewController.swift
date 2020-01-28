@@ -7,37 +7,6 @@
 //
 
 import UIKit
-
-/*struct HashTagList {
-    var name : String?
-    var volume : Int?
-    
-    var whole : String?
-    var society : String?
-    var sports : String?
-    var etc : String?
-    }*/
-class RealTime {
-    var title : String?
-    var volume : Int?
-}
-enum HashTagLists {
-    case All
-    case Society
-    case Sports
-    case Etc
-    
-}
-protocol HashTagList{
-    var type: HashTagLists { get }
-    var rowCount : Int { get }
-    var sectionTitle: String { get }
-}
-extension HashTagList {
-    var rowCount : Int {
-        return 1
-    }
-}
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
@@ -83,25 +52,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 @IBOutlet weak var TableViewMain: UITableView!
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
+        
         let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as!All
-        let societycell = TableViewMain.dequeueReusableCell(withIdentifier: "Society", for: indexPath) as!Society
-        let sportcell = TableViewMain.dequeueReusableCell(withIdentifier: "Sports", for: indexPath)
-                   as!Sports
-        let etccell = TableViewMain.dequeueReusableCell(withIdentifier: "Etc", for: indexPath)as!Etc
-    allcell.AllLabel.text = "(#아무노래 챌린지)"
-     societycell.SocietyLabel.text = "(#김정은)"
-     sportcell.SportsLabel.text = "(#류현진)"
-       etccell.EtcLabel.text = "(#애쉬골드)"
        
-     return allcell*/
-            
-      
+        let rowData = self.trendlist[indexPath.row]
+        
+        allcell.AllLabel.text = rowData.name
+          
+        allcell.VolumeLabel.text = "트윗"
+ 
+            return allcell
          
            
     }
+    let trendlist:[Trend] = [
+        Trend(name:"#해시태그 이슈"),
+        Trend(name:"#아무노래챌린지"),
+        
+       // Trend(name:
+        
+    
+    
+    
+    
+    
+    ]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return 3
+        return self.trendlist.count
       }
       
     /*func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -119,11 +96,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableViewMain.dataSource = self
         /*getTrendsTwitter()*/
         
-        MyApi.shared.trend { result in
+      /*  MyApi.shared.trend { result in
         print(result)
-    }
+    }*/
   
     
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "trendDetail"{
+            let trendlist = sender as? Trend
+            if trendlist != nil{
+                let detailController1 = segue.destination as? TrendListDetailViewController1
+                if detailController1 != nil {
+                    detailController1!.trendDetail = trendlist
+                    
+                }
+            }
+        }
+    }
+
+
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "trendDetail", sender: self.trendlist[indexPath.row])
+        }
+    
 }
+
 
