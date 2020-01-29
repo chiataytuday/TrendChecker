@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let rowData = self.trendlist[indexPath.row]
         
         allcell.AllLabel.text = rowData.name
-          
+        
         allcell.VolumeLabel.text = "트윗"
  
             return allcell
@@ -68,7 +68,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let trendlist:[Trend] = [
         Trend(name:"#해시태그 이슈"),
         Trend(name:"#아무노래챌린지"),
-        
+        Trend(name:"#정치/사회/경제"),
+        Trend(name:"#이국종"),
+        Trend(name:"#연애/스포츠"),
+        Trend(name:"#박보영")
        // Trend(name:
         
     
