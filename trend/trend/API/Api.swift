@@ -8,9 +8,11 @@
 
 import Foundation
 import Alamofire
+import OAuthSwift
 
 class MyApi: NSObject {
     static let shared = MyApi()
+<<<<<<< HEAD
     
     private let authorization = """
     OAuth oauth_consumer_key="G2DeDOSi7dThLsqA6oApmHJ1U",oauth_token="1218733691335135234-HuJdXlOoWvmx8AcJ3oLLmVpJKbrXJy",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1579667447",oauth_nonce="GBn8wz10ImE",oauth_version="1.0",oauth_signature="ekowH5NlLYAnMWtV%2BLJlYigFdnU%3D"
@@ -45,14 +47,32 @@ class MyApi: NSObject {
                     Trend(name: "d", url: "http://", query: "a", tweetVolume: 100)
                 ]
                 completion(result)
+=======
+   
+    private var oauthswift = OAuth1Swift(
+        consumerKey:    "G2DeDOSi7dThLsqA6oApmHJ1U",
+        consumerSecret: "pUfRALnc9OkVhUNo0urpicwkM5LZ8D0r8wUxIeXXLmwuLKh9SH"
+    )
+   
+    func trend(completion: @escaping (String?) -> Void) {
+        oauthswift.client.get("https://api.twitter.com/1.1/trends/place.json?id=23424868") { result in
+            switch result {
+            case .success(let response):
+                let decoder = JSONDecoder()
+                
+                if let decoded = try? decoder.decode(Array<TwitterResponse>.self, from: response.data) {
+                    var result:[Trend] = decoded.first?.trends ?? []
+                    print(result)
+                }
+               
+//                completion(_response)
+>>>>>>> b4681304878a0f81806037c5979a02cb5d475811
             case .failure(let error):
-                print(error)
+               print(error)
             }
-            
-        })
-        
+        }
+    
     }
 
-
-*/
 }
+
