@@ -13,10 +13,12 @@
 		3F2CC0D023C3195D0018DAA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */; };
 		3F2CC0D223C3195F0018DAA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */; };
 		3F2CC0D523C3195F0018DAA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D323C3195F0018DAA0 /* LaunchScreen.storyboard */; };
-		3F2CC0DD23C319710018DAA0 /* trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CC0DC23C319710018DAA0 /* trend.swift */; };
 		406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B0F23D80FB400FB8B2C /* Trend.swift */; };
 		406A0B1223D80FE100FB8B2C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B1123D80FE100FB8B2C /* Api.swift */; };
 		406A0B1523D8108100FB8B2C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 406A0B1423D8108100FB8B2C /* Alamofire */; };
+		406A0B1923DAC93700FB8B2C /* TwitterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B1823DAC93700FB8B2C /* TwitterResponse.swift */; };
+		406A0B1B23E009BF00FB8B2C /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B1A23E009BF00FB8B2C /* ViewController2.swift */; };
+		406A0B2123E02CE800FB8B2C /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 406A0B2023E02CE800FB8B2C /* OAuthSwift */; };
 		CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */; };
 		CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */; };
 		CE18972B23D710A3003F7885 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18972A23D710A3003F7885 /* All.swift */; };
@@ -31,9 +33,10 @@
 		3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2CC0D423C3195F0018DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2CC0D623C3195F0018DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F2CC0DC23C319710018DAA0 /* trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trend.swift; sourceTree = "<group>"; };
 		406A0B0F23D80FB400FB8B2C /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		406A0B1123D80FE100FB8B2C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		406A0B1823DAC93700FB8B2C /* TwitterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterResponse.swift; sourceTree = "<group>"; };
+		406A0B1A23E009BF00FB8B2C /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController1.swift; sourceTree = "<group>"; };
 		CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController2.swift; sourceTree = "<group>"; };
 		CE18972A23D710A3003F7885 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406A0B2123E02CE800FB8B2C /* OAuthSwift in Frameworks */,
 				406A0B1523D8108100FB8B2C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +78,7 @@
 				3F2CC0C823C3195D0018DAA0 /* AppDelegate.swift */,
 				3F2CC0CA23C3195D0018DAA0 /* SceneDelegate.swift */,
 				3F2CC0CC23C3195D0018DAA0 /* ViewController.swift */,
+				406A0B1A23E009BF00FB8B2C /* ViewController2.swift */,
 				3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */,
 				CE18972A23D710A3003F7885 /* All.swift */,
 				CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */,
@@ -81,7 +86,6 @@
 				3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */,
 				3F2CC0D323C3195F0018DAA0 /* LaunchScreen.storyboard */,
 				3F2CC0D623C3195F0018DAA0 /* Info.plist */,
-				3F2CC0DC23C319710018DAA0 /* trend.swift */,
 			);
 			path = trend;
 			sourceTree = "<group>";
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				406A0B0F23D80FB400FB8B2C /* Trend.swift */,
+				406A0B1823DAC93700FB8B2C /* TwitterResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			name = trend;
 			packageProductDependencies = (
 				406A0B1423D8108100FB8B2C /* Alamofire */,
+				406A0B2023E02CE800FB8B2C /* OAuthSwift */,
 			);
 			productName = trend;
 			productReference = 3F2CC0C523C3195D0018DAA0 /* trend.app */;
@@ -152,6 +158,7 @@
 			mainGroup = 3F2CC0BC23C3195D0018DAA0;
 			packageReferences = (
 				406A0B1323D8108100FB8B2C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				406A0B1F23E02CE800FB8B2C /* XCRemoteSwiftPackageReference "OAuthSwift" */,
 			);
 			productRefGroup = 3F2CC0C623C3195D0018DAA0 /* Products */;
 			projectDirPath = "";
@@ -183,12 +190,13 @@
 				3F2CC0CD23C3195D0018DAA0 /* ViewController.swift in Sources */,
 				406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */,
 				CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */,
+				406A0B1923DAC93700FB8B2C /* TwitterResponse.swift in Sources */,
 				3F2CC0C923C3195D0018DAA0 /* AppDelegate.swift in Sources */,
+				406A0B1B23E009BF00FB8B2C /* ViewController2.swift in Sources */,
 				406A0B1223D80FE100FB8B2C /* Api.swift in Sources */,
 				CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */,
 				CE18972B23D710A3003F7885 /* All.swift in Sources */,
 				3F2CC0CB23C3195D0018DAA0 /* SceneDelegate.swift in Sources */,
-				3F2CC0DD23C319710018DAA0 /* trend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +404,14 @@
 				minimumVersion = 4.9.1;
 			};
 		};
+		406A0B1F23E02CE800FB8B2C /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -403,6 +419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 406A0B1323D8108100FB8B2C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		406A0B2023E02CE800FB8B2C /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 406A0B1F23E02CE800FB8B2C /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
