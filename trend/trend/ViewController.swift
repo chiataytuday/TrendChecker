@@ -41,30 +41,51 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as!All
-       
-        let rowData = self.trendlist[indexPath.row]
-        
-        allcell.AllLabel.text = rowData.name
-        
-        allcell.VolumeLabel.text = "\(rowData.tweetVolume)트윗"
- 
-            return allcell
+        if indexPath.row % 2 == 0 {
+
+        let categorycell = TableViewMain.dequeueReusableCell(withIdentifier: "Category", for: indexPath) as! Category
+        if indexPath.row == 0 {
+                categorycell.CategoryNameLabel.text = "# 해시태그 이슈"
+            }
+        if indexPath.row == 2 {
+                           categorycell.CategoryNameLabel.text = "# 정치/사회/경제"
+                       }
+        if indexPath.row == 4 {
+                                            categorycell.CategoryNameLabel.text = "# 연예/스포츠"
+                                        }
+        if indexPath.row == 6{
+            categorycell.CategoryNameLabel.text = "# 그외 이슈"
+
+      
+            
+            }
+                                                                      
+                                    
+                   
+                   
+           
+            
+                       return categorycell
+            
+        } else {
+
+                   let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as! All
+                  
+                   let rowData = self.trendlist[indexPath.row]
+                   
+                   allcell.AllLabel.text = rowData.name
+                   
+                  // allcell.VolumeLabel.text = "\(rowData.tweetVolume)트윗"
+            
+                       return allcell
+            
+        }
          
            
     }
-   var trendlist:[Trend] = [
-
-        Trend(name:"# 해시태그이슈"),
-        Trend(name:""),
-        Trend(name:"# 정치/사회/경제"),
-        Trend(name:""),
-        Trend(name:"# 연애/스포츠"),
-        Trend(name:""),
-         Trend(name:"# 기타이슈 "),
-    ]
+   var trendlist:[Trend] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.trendlist.count
+        return self.trendlist.count + 4
       }
       
     /*func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -85,7 +106,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         MyApi.shared.trend { result in
             
-            self.trendlist = result
+           self.trendlist = result
             self.TableViewMain.reloadData()
         }
     }
