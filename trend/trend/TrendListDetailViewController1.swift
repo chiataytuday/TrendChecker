@@ -8,14 +8,23 @@
 
 import UIKit
 
-class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+class TrendListDetailViewController1: UIViewController/*,UITableViewDelegate,UITableViewDataSource*/ {
+    
+    @IBOutlet weak var TableViewDetail: UITableView!
+    
+    
+    
+    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+        let detailcell = TableViewDetail.dequeueReusableCell(withIdentifier: "Detail", for: indexPath)as!Detail
+        
+     
+        
+        detailcell.TitleLabel.text =
+    }*/
     
 
     var trendDetail : Trend? = nil
