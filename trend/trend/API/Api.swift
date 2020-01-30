@@ -51,8 +51,15 @@ class MyApi: NSObject {
                     for index in 0..<result.count{//nameArr에 트랜드 키워드 저장
                         nameArr.append(result[index].name)
                     }
+                    
+                    var example : [Trend] = []
+                    for index in 0...3{
+                        example.append(result[index])
+                    }
+                    
+                    completion(example)
                     //print(result)
-                    completion(result)
+                   // completion(result)
                     
                 }
             case .failure(let error):
