@@ -13,6 +13,7 @@
 		3F2CC0D023C3195D0018DAA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */; };
 		3F2CC0D223C3195F0018DAA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */; };
 		3F2CC0D523C3195F0018DAA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CC0D323C3195F0018DAA0 /* LaunchScreen.storyboard */; };
+		3FFE904723E2C80000682E61 /* TrendChecker.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE904623E2C80000682E61 /* TrendChecker.mlmodel */; };
 		406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B0F23D80FB400FB8B2C /* Trend.swift */; };
 		406A0B1223D80FE100FB8B2C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B1123D80FE100FB8B2C /* Api.swift */; };
 		406A0B1523D8108100FB8B2C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 406A0B1423D8108100FB8B2C /* Alamofire */; };
@@ -36,6 +37,7 @@
 		3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2CC0D423C3195F0018DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2CC0D623C3195F0018DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FFE904623E2C80000682E61 /* TrendChecker.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TrendChecker.mlmodel; path = "../../../../../Desktop/무제 폴더/First.mlproj/Models/TrendChecker.mlmodel"; sourceTree = "<group>"; };
 		406A0B0F23D80FB400FB8B2C /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		406A0B1123D80FE100FB8B2C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		406A0B1823DAC93700FB8B2C /* TwitterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterResponse.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				3F2CC0C823C3195D0018DAA0 /* AppDelegate.swift */,
 				3F2CC0CA23C3195D0018DAA0 /* SceneDelegate.swift */,
 				3F2CC0CC23C3195D0018DAA0 /* ViewController.swift */,
+				3FFE904623E2C80000682E61 /* TrendChecker.mlmodel */,
 				406A0B1A23E009BF00FB8B2C /* ViewController2.swift */,
 				3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */,
 				CE18972A23D710A3003F7885 /* All.swift */,
@@ -200,6 +203,7 @@
 				406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */,
 				CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */,
 				406A0B1923DAC93700FB8B2C /* TwitterResponse.swift in Sources */,
+				3FFE904723E2C80000682E61 /* TrendChecker.mlmodel in Sources */,
 				3F2CC0C923C3195D0018DAA0 /* AppDelegate.swift in Sources */,
 				406A0B2923E2A04B00FB8B2C /* TextResponse.swift in Sources */,
 				406A0B1B23E009BF00FB8B2C /* ViewController2.swift in Sources */,
