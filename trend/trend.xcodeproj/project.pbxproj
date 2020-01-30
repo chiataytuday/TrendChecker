@@ -24,6 +24,7 @@
 		CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */; };
 		CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */; };
 		CE18972B23D710A3003F7885 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18972A23D710A3003F7885 /* All.swift */; };
+		CE4A031123E2A522009C3CE3 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A031023E2A522009C3CE3 /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController1.swift; sourceTree = "<group>"; };
 		CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController2.swift; sourceTree = "<group>"; };
 		CE18972A23D710A3003F7885 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
+		CE4A031023E2A522009C3CE3 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				406A0B1A23E009BF00FB8B2C /* ViewController2.swift */,
 				3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */,
 				CE18972A23D710A3003F7885 /* All.swift */,
+				CE4A031023E2A522009C3CE3 /* Detail.swift */,
 				CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */,
 				CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */,
 				3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 				CE18972B23D710A3003F7885 /* All.swift in Sources */,
 				406A0B2723E2A03500FB8B2C /* Text.swift in Sources */,
 				3F2CC0CB23C3195D0018DAA0 /* SceneDelegate.swift in Sources */,
+				CE4A031123E2A522009C3CE3 /* Detail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

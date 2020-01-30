@@ -53,25 +53,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          
            
     }
-    let trendlist:[Trend] = [
+   var trendlist:[Trend] = [
 
-        Trend(name:"#해시태그 이슈"),
-        Trend(name:"#아무노래챌린지"),
-        Trend(name:"#정치/사회/경제"),
-        Trend(name:"#이국종"),
-        Trend(name:"#연애/스포츠"),
-        Trend(name:"#박보영"),
-       // Trend(name:
-        
-    
-    
-    
-    
-    
-
-        Trend(name:"#해시태그이슈"),
-        Trend(name:"#아무노래챌린지")
-
+        Trend(name:"# 해시태그이슈"),
+        Trend(name:""),
+        Trend(name:"# 정치/사회/경제"),
+        Trend(name:""),
+        Trend(name:"# 연애/스포츠"),
+        Trend(name:""),
+         Trend(name:"# 기타이슈 "),
     ]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trendlist.count
@@ -98,7 +88,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
   
        
-    
+
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "trendDetail"{
