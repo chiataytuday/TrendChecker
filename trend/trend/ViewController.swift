@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         allcell.AllLabel.text = rowData.name
         
-        allcell.VolumeLabel.text = "트윗"
+        allcell.VolumeLabel.text = "\(rowData.tweetVolume)트윗"
  
             return allcell
          
@@ -84,12 +84,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         MyApi.shared.trend { result in
-        print(result)
+            
+            self.trendlist = result
+            self.TableViewMain.reloadData()
+        }
     }
-  
-       
-
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "trendDetail"{
             let trendlist = sender as? Trend
