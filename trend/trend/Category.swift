@@ -10,4 +10,7 @@ import UIKit
 class Category : UITableViewCell{
     
     
+    @IBOutlet weak var CategoryNameLabel: UILabel!
+    
+    
 }
