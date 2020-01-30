@@ -12,5 +12,4 @@ class Detail : UITableViewCell {
     @IBOutlet weak var TitleLabel: UILabel!
     
     @IBOutlet weak var VolumeLabel2: UILabel!
-    
 }
