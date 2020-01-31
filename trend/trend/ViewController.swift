@@ -43,9 +43,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if indexPath.row % 2 == 0 {
 
-        let categorycell = TableViewMain.dequeueReusableCell(withIdentifier: "Category", for: indexPath) as! Category
-            
-        if indexPath.row == 0 {
+            let categorycell = TableViewMain.dequeueReusableCell(withIdentifier: "Category", for: indexPath) as! Category
+            //categorycell.CategoryNameLabel.text = ["# 해시태그 이슈","# 정치/사회/경제","# 연예/스포츠","# 그외 이슈"]
+       if indexPath.row == 0 {
                 categorycell.CategoryNameLabel.text = "# 해시태그 이슈"
             }
         if indexPath.row == 2 {
@@ -72,13 +72,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                    let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as! All
                   
-            //let rowData = trendlist[indexPath.row]
+            let rowData = trendlist[indexPath.row]
                    
           
                
-                //allcell.AllLabel.text = rowData.name
+                allcell.AllLabel.text = rowData.name
               
-                //allcell.VolumeLabel.text = "\(rowData.tweetVolume)트윗"
+                allcell.VolumeLabel.text = "\(rowData.tweetVolume)트윗"
                           
                 return allcell
                           
@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
    var trendlist:[Trend] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.trendlist.count + 4
+        return self.trendlist.count
       }
       
    /* func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
