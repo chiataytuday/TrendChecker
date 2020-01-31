@@ -153,8 +153,8 @@
                                     <tabBarItem systemItem="more" id="dgv-2P-Qer"/>
                                 </items>
                             </tabBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdS-mJ-hE4">
-                                <rect key="frame" x="41" y="129" width="333" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdS-mJ-hE4">
+                                <rect key="frame" x="41" y="129" width="353" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -172,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5Ge-Cz-GGq"/>
                     <connections>
+                        <outlet property="CurrentTime2" destination="CdS-mJ-hE4" id="pmZ-1V-q33"/>
                         <outlet property="TableViewDetail" destination="nTa-5z-mMW" id="rIJ-d2-Uny"/>
                         <segue destination="k6c-A1-RSl" kind="show" id="or5-1l-qZM"/>
                     </connections>
