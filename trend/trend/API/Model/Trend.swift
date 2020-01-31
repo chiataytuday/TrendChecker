@@ -21,3 +21,4 @@ struct Trend: Codable {
         case tweetVolume = "tweet_volume"
     }
 }
+
