@@ -15,7 +15,9 @@ class TrendListDetailViewController2: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+           
+       }
 
     /*
     // MARK: - Navigation
