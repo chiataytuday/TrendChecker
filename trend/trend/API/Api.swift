@@ -53,7 +53,7 @@ class MyApi: NSObject {
                     }
                     
                     var example : [Trend] = []
-                    for index in 0...7{
+                    for index in 0...8{
                         example.append(result[index])
                     }
                     
