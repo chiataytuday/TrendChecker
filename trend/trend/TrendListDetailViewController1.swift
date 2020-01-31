@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
+
+
 class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var TableViewDetail: UITableView!
     
-    @IBOutlet weak var CurrentTime2: UILabel!
+   /* @IBOutlet weak var CurrentTime2: UILabel!
     let timeSelector : Selector = #selector(TrendListDetailViewController1.updateTime)
          let interval = 1.0 // 타이머 간격. 1초
          var count = 0 // 타이머가 설정한 간격대로 실행되는지 확인하기 위한 변수
@@ -31,7 +35,7 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
                // 현재날짜(date)를 formatter의 dateFormat에서 설정한 포맷대로 string 메서드를 사용하여 문자열(String)로 변환
             CurrentTime2.text = "현재시간 : "+formatter.string(from: date as Date)
            
-       }
+       }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      return self.trenddetaillist.count
@@ -61,24 +65,30 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     TableViewDetail.delegate = self
+        TableViewDetail.delegate = self
         TableViewDetail.dataSource = self
         /*getTrendsTwitter()*/
         
         
-        MyApi.shared.trend { result in
-            
-        self.trenddetaillist = result
-        self.TableViewDetail.reloadData()
-    }
+        MyApi.shared.getTrend{ result in
+                
+            self.trenddetaillist = result
+            self.TableViewDetail.reloadData()
+        }
     
 
         func viewDidAppear(_ animated: Bool) {
         
-    }
+        }
+        
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                 performSegue(withIdentifier: "trendUrl", sender: self.trenddetaillist[indexPath.row])
-             }
+            
+            
+            
+            
+            
+            // performSegue(withIdentifier: "trendUrl", sender: self.trenddetaillist[indexPath.row])
+         }
          
 
 
@@ -93,4 +103,5 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
     */
 
 }
+    
 }
