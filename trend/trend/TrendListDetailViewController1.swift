@@ -46,7 +46,7 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
                
                     
                     detailcell.TitleLabel.text = rowData.name
-                    
+                   detailcell.VolumeLabel2.text = String(self.trenddetaillist[Int(indexPath.row)].tweetVolume ?? 0)+"트윗"
                    
                                
                      return detailcell
@@ -76,6 +76,10 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
         func viewDidAppear(_ animated: Bool) {
         
     }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                 performSegue(withIdentifier: "trendUrl", sender: self.trenddetaillist[indexPath.row])
+             }
+         
 
 
     /*
