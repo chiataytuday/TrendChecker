@@ -27,6 +27,7 @@
 		CE18972B23D710A3003F7885 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18972A23D710A3003F7885 /* All.swift */; };
 		CE4A031123E2A522009C3CE3 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A031023E2A522009C3CE3 /* Detail.swift */; };
 		CE4A031523E2C815009C3CE3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A031423E2C815009C3CE3 /* Category.swift */; };
+		CE93AA5E23E410D1008041C0 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93AA5D23E410D1008041C0 /* ContentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CE18972A23D710A3003F7885 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 		CE4A031023E2A522009C3CE3 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		CE4A031423E2C815009C3CE3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CE93AA5D23E410D1008041C0 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				3F2CC0CC23C3195D0018DAA0 /* ViewController.swift */,
 				406A0B1A23E009BF00FB8B2C /* ViewController2.swift */,
 				3F2CC0CE23C3195D0018DAA0 /* Main.storyboard */,
+				CE93AA5D23E410D1008041C0 /* ContentCell.swift */,
 				CE4A031423E2C815009C3CE3 /* Category.swift */,
 				CE18972A23D710A3003F7885 /* All.swift */,
 				CE4A031023E2A522009C3CE3 /* Detail.swift */,
@@ -209,6 +212,7 @@
 				406A0B2B23E2D1FC00FB8B2C /* TrendChecker.mlmodel in Sources */,
 				3F2CC0C923C3195D0018DAA0 /* AppDelegate.swift in Sources */,
 				406A0B2923E2A04B00FB8B2C /* TextResponse.swift in Sources */,
+				CE93AA5E23E410D1008041C0 /* ContentCell.swift in Sources */,
 				406A0B1B23E009BF00FB8B2C /* ViewController2.swift in Sources */,
 				406A0B1223D80FE100FB8B2C /* Api.swift in Sources */,
 				CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */,
