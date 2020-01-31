@@ -12,28 +12,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var trendlist:[Trend] = []
     var categories:[String] = ["# 해시태그 이슈","# 정치/사회/경제","# 연예/스포츠","# 그외 이슈"]
-    var contentText:[String] = []
     var isLoaded:Bool = false
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isLoaded {
-            if indexPath.row % 3 == 0 { // 짝수
+            if indexPath.row % 2 == 0 { // 짝수
                 let categorycell = TableViewMain.dequeueReusableCell(withIdentifier: "Category", for: indexPath) as! Category
-                categorycell.CategoryNameLabel.text = self.categories[Int(indexPath.row / 3)]
+                categorycell.CategoryNameLabel.text = self.categories[Int(indexPath.row / 2)]
                 return categorycell
-            } else if indexPath.row % 3 == 1{ // 홀수
+            } else { // 홀수
                 let allcell = TableViewMain.dequeueReusableCell(withIdentifier: "All", for: indexPath) as! All
-                   
-                allcell.AllLabel.text = self.trendlist[Int(indexPath.row / 3)].name
-                allcell.VolumeLabel.text = String(self.trendlist[Int(indexPath.row / 3)].tweetVolume ?? 0)+"트윗"
+                let data = self.trendlist[Int(((indexPath.row + 1) / 2)-1)]
+                allcell.AllLabel.text = data.name
+                allcell.contentLabel.text = data.name
+                allcell.VolumeLabel.text = String(data.tweetVolume ?? 0)+"트윗"
                           
                 return allcell
-            }
-            else {
-                let contentcell = TableViewMain.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
-                contentcell.ContentLabel.text = String(self.contentText[Int(indexPath.row/3)])
-                return contentcell
             }
         } else {
             let categorycell = TableViewMain.dequeueReusableCell(withIdentifier: "Category", for: indexPath) as! Category
@@ -43,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isLoaded {
-            return self.trendlist.count + self.categories.count + self.contentText.count
+            return self.trendlist.count + self.categories.count
             
         } else {
             return self.categories.count
@@ -73,18 +68,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           var hashtag: [Trend] = []
 
           MyApi.shared.getTrend { result in
-              print(result)
-              printResult = result
-              
-              printResult = result.filter { !$0.name.hasPrefix("#") }//해시태그 이슈 제외
-              hashtag = result.filter { $0.name.hasPrefix("#") }
-              
-              print(printResult)
-              print(hashtag)
-              
-              MyApi.shared.getTimeLine(query: "\(printResult[0].name)", completion: {_ in
-          })
-        }
+            self.trendlist = [
+                result[0],
+                result[1],
+                result[2],
+                result[3]
+            ]
+            self.isLoaded = true
+            self.TableViewMain.reloadData()
+//              print(result)
+//              printResult = result
+//
+//              printResult = result.filter { !$0.name.hasPrefix("#") }//해시태그 이슈 제외
+//              hashtag = result.filter { $0.name.hasPrefix("#") }
+//
+//              print(printResult)
+//              print(hashtag)
+//
+//              MyApi.shared.getTimeLine(query: "\(printResult[0].name)", completion: {_ in
+          }
     }
     
     /*@IBOutlet weak var CurrentTime: UILabel!
@@ -122,7 +124,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "trendDetail", sender: self.trendlist[indexPath.row])
+            if indexPath.row % 2 == 1 {
+                performSegue(withIdentifier: "trendDetail", sender: self.trendlist[Int(indexPath.row/2)])
+            }
         }
     
  
