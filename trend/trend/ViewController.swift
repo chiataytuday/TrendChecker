@@ -69,10 +69,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         /*getTrendsTwitter()*/
         
         
-        MyApi.shared.trend { result in
-            self.trendlist = result
-            self.isLoaded = true
-            self.TableViewMain.reloadData()
+        var printResult:[Trend] = []
+          var hashtag: [Trend] = []
+
+          MyApi.shared.getTrend { result in
+              print(result)
+              printResult = result
+              
+              printResult = result.filter { !$0.name.hasPrefix("#") }//해시태그 이슈 제외
+              hashtag = result.filter { $0.name.hasPrefix("#") }
+              
+              print(printResult)
+              print(hashtag)
+              
+              MyApi.shared.getTimeLine(query: "\(printResult[0].name)", completion: {_ in
+          })
         }
     }
     
