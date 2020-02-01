@@ -54,6 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let
         }
     }*/
+    var trendsData:[[Trend]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -67,13 +69,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var printResult:[Trend] = []
           var hashtag: [Trend] = []
 
-          MyApi.shared.getTrend { result in
-            self.trendlist = [
-                result[0],
-                result[1],
-                result[2],
-                result[3]
-            ]
+          MyApi.shared.getTrendsB { result in
+            self.trendsData = result
+            self.trendlist = result.map { $0.count > 0 ? $0[0] : Trend(name: "로딩 중", url: nil, query: nil, tweetVolume:  nil) }
             self.isLoaded = true
             self.TableViewMain.reloadData()
 //              print(result)
@@ -112,11 +110,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "trendDetail"{
-            let trendlist = sender as? Trend
+            let trendlist = sender as? [Trend]
             if trendlist != nil{
-                let detailController1 = segue.destination as? TrendListViewController
+                let detailController1 = segue.destination as? TrendListDetailViewController1
                 if detailController1 != nil {
-                    detailController1!.trendDetail = trendlist
+                    print(trendlist)
+//                    detailController1!.trendDetail = trendlist
                 }
             }
         }
@@ -125,7 +124,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row % 2 == 1 {
-                performSegue(withIdentifier: "trendDetail", sender: self.trendlist[Int(indexPath.row/2)])
+                performSegue(withIdentifier: "trendDetail", sender: self.trendsData[Int(indexPath.row/2)])
             }
         }
     
