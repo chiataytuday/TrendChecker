@@ -58,6 +58,7 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TwitDisplayViewController
         let codersHighURL = URL(string: "http://www.apple.com")
