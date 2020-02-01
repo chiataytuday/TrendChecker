@@ -45,21 +45,11 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
       
-<<<<<<< HEAD:trend/trend/TrendCategoryViewController.swift
-   
-=======
-   /* func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "TrendListDetailViewController1")as!TrendListDetailViewController1
-    }*/
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "trendDetail"{
-            let
-        }
-    }*/
+
+
     var trendsData:[[Trend]] = []
     
->>>>>>> 55d770a3564a14484dc4689d7783f7b7c9ba1b5b:trend/trend/ViewController.swift
+
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -94,10 +84,10 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         if segue.identifier == "trendDetail"{
             let trendlist = sender as? [Trend]
             if trendlist != nil{
-                let detailController1 = segue.destination as? TrendListDetailViewController1
+                let detailController1 = segue.destination as? TrendListViewController
                 if detailController1 != nil {
                     print(trendlist)
-//                    detailController1!.trendDetail = trendlist
+                //detailController1!.trendDetail = trendlist
                 }
             }
         }
