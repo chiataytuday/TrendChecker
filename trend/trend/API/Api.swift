@@ -38,7 +38,7 @@ class MyApi: NSObject {
                    case .failure(let error):
                       print(error)
                    }
-               }
+        }
     }
    
     func getTrend(completion: @escaping ([Trend]) -> Void) {//트위터 트랜드 가져오기
@@ -84,50 +84,51 @@ class MyApi: NSObject {
     }
     
     
-    func getTrendsB(completion: @escaping ([Trend]) -> Void) {
+    func getTrendsB(completion: @escaping ([[Trend]]) -> Void) {
         var result: [Trend] = []
-        var count = 0
         
-        var checkField:[[String: Trend?]] = [
-            ["연예": nil],
-            ["정치": nil],
-            ["기타": nil]
+        var checkField:[String: [Trend]] = [
+            "해시태그 이슈": [],
+            "연애": [],
+            "정치 사회": [],
+            "기타": []
         ]
     
-        self.getTrend(completion: { rawTrend in
-            for raw in rawTrend {
-                self.getTimeLine(query: raw.name, completion: { texts in
-                    
-                    let classifySource = self.classifyTrend(trend: raw.name, timeline: texts)
-                    //머신러닝 하고
-                    
-                    let mlResult = "TAG_A"
-                    
-                    for field in checkField.enumerated() {
-                        if field.element[mlResult] == nil {
-                            checkField[field.offset][mlResult] = raw
-                        }
+        self.getTrend(completion: { rawTrends in
+            var count = 0
+            for trend in rawTrends {
+                self.getTimeLine(query: trend.name, completion: { texts in
+                    if trend.name.contains("#") {
+                        checkField["해시태그 이슈"]?.append(trend)
+                    } else {
+                        let mlResult = self.classifyTrend(trend: trend.name, timeline: texts)
+                        checkField[mlResult]?.append(trend)
                     }
-                    let count = checkField.filter { $0 != nil }.count
                     
-                    if count == 4 {
+                    if count == rawTrends.count - 1 {
                         completion([
-                            checkField[0]["Tag_A"]!!,
-                            checkField[1]["Tag_B"]!!,
-                            checkField[2]["Tag_C"]!!,
-                            checkField[3]["Tag_D"]!!
+                            checkField["해시태그 이슈"]!,
+                            checkField["연애"]!,
+                            checkField["정치 사회"]!,
+                            checkField["기타"]!
                         ])
-                    } else if count == rawTrend.count {
-                        //비어있는 Trend 채워야함
-                        completion(result)
+                    } else {
+                        completion([
+                            checkField["해시태그 이슈"]!,
+                            checkField["연애"]!,
+                            checkField["정치 사회"]!,
+                            checkField["기타"]!
+                        ])
+                        print(count)
+                        count += 1
                     }
                 })
             }
         })
     }
 
-    func classifyTrend(trend:String, timeline:[Text]) -> String{
-        
+    func classifyTrend(trend:String, timeline:[Text]) -> String{//카테고리별로 트랜드를 분류
+        var result = ""
         var naturalTrend = trend
         for index in 0..<timeline.count{
             naturalTrend.append(timeline[index].text)
@@ -138,12 +139,11 @@ class MyApi: NSObject {
         do {
             let sentimentPredictor = try NLModel(mlModel: model)
             let predictions = sentimentPredictor.predictedLabel(for: naturalTrend)
-            print(predictions)
+            result = predictions ?? ""
         } catch {
             print(error)
-            
         }
-        return ""
+        return result
     }
 }
 extension String {
