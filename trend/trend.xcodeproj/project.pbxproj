@@ -23,10 +23,10 @@
 		406A0B2923E2A04B00FB8B2C /* TextResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B2823E2A04B00FB8B2C /* TextResponse.swift */; };
 		406A0B2B23E2D1FC00FB8B2C /* TrendChecker.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 406A0B2A23E2D1FC00FB8B2C /* TrendChecker.mlmodel */; };
 		CE18970723D702F5003F7885 /* TrendListDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */; };
-		CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */; };
 		CE18972B23D710A3003F7885 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18972A23D710A3003F7885 /* All.swift */; };
 		CE4A031123E2A522009C3CE3 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A031023E2A522009C3CE3 /* Detail.swift */; };
 		CE4A031523E2C815009C3CE3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A031423E2C815009C3CE3 /* Category.swift */; };
+		CE80305423E5451900867B5B /* TwitDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80305323E5451900867B5B /* TwitDisplayViewController.swift */; };
 		CE93AA5E23E410D1008041C0 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93AA5D23E410D1008041C0 /* ContentCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +47,10 @@
 		406A0B2823E2A04B00FB8B2C /* TextResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponse.swift; sourceTree = "<group>"; };
 		406A0B2A23E2D1FC00FB8B2C /* TrendChecker.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TrendChecker.mlmodel; sourceTree = "<group>"; };
 		CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController1.swift; sourceTree = "<group>"; };
-		CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendListDetailViewController2.swift; sourceTree = "<group>"; };
 		CE18972A23D710A3003F7885 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 		CE4A031023E2A522009C3CE3 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		CE4A031423E2C815009C3CE3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CE80305323E5451900867B5B /* TwitDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitDisplayViewController.swift; sourceTree = "<group>"; };
 		CE93AA5D23E410D1008041C0 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,8 +97,8 @@
 				CE4A031423E2C815009C3CE3 /* Category.swift */,
 				CE18972A23D710A3003F7885 /* All.swift */,
 				CE4A031023E2A522009C3CE3 /* Detail.swift */,
-				CE18970823D70315003F7885 /* TrendListDetailViewController2.swift */,
 				CE18970623D702F5003F7885 /* TrendListDetailViewController1.swift */,
+				CE80305323E5451900867B5B /* TwitDisplayViewController.swift */,
 				3F2CC0D123C3195F0018DAA0 /* Assets.xcassets */,
 				3F2CC0D323C3195F0018DAA0 /* LaunchScreen.storyboard */,
 				3F2CC0D623C3195F0018DAA0 /* Info.plist */,
@@ -207,7 +207,6 @@
 			files = (
 				3F2CC0CD23C3195D0018DAA0 /* ViewController.swift in Sources */,
 				406A0B1023D80FB400FB8B2C /* Trend.swift in Sources */,
-				CE18970923D70315003F7885 /* TrendListDetailViewController2.swift in Sources */,
 				406A0B1923DAC93700FB8B2C /* TwitterResponse.swift in Sources */,
 				406A0B2B23E2D1FC00FB8B2C /* TrendChecker.mlmodel in Sources */,
 				3F2CC0C923C3195D0018DAA0 /* AppDelegate.swift in Sources */,
@@ -219,6 +218,7 @@
 				CE18972B23D710A3003F7885 /* All.swift in Sources */,
 				406A0B2723E2A03500FB8B2C /* Text.swift in Sources */,
 				3F2CC0CB23C3195D0018DAA0 /* SceneDelegate.swift in Sources */,
+				CE80305423E5451900867B5B /* TwitDisplayViewController.swift in Sources */,
 				CE4A031123E2A522009C3CE3 /* Detail.swift in Sources */,
 				CE4A031523E2C815009C3CE3 /* Category.swift in Sources */,
 			);
