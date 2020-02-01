@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import SafariServices
 
 
 
 
-
-class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var TableViewDetail: UITableView!
+    @IBOutlet weak var tableViewDetail: UITableView!
     
+    var trenddetaillist:[Trend] = []
+
+    var trendDetail : Trend? = nil
+    
+    override func viewDidLoad() {
+       super.viewDidLoad()
+
+       tableViewDetail.delegate = self
+       tableViewDetail.dataSource = self
+       /*getTrendsTwitter()*/
+       
+       MyApi.shared.getTrend{ result in
+           self.trenddetaillist = result
+           self.tableViewDetail.reloadData()
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+   
+   }
+        
+        
    /* @IBOutlet weak var CurrentTime2: UILabel!
     let timeSelector : Selector = #selector(TrendListDetailViewController1.updateTime)
          let interval = 1.0 // 타이머 간격. 1초
@@ -42,66 +64,39 @@ class TrendListDetailViewController1: UIViewController,UITableViewDelegate,UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let detailcell = TableViewDetail.dequeueReusableCell(withIdentifier: "Detail", for: indexPath)as!Detail
+        let detailcell = tableViewDetail.dequeueReusableCell(withIdentifier: "Detail", for: indexPath)as!Detail
        
+         let rowData = trenddetaillist[indexPath.row]
+                
+       
+            
+        detailcell.TitleLabel.text = rowData.name
+        detailcell.VolumeLabel2.text = String(self.trenddetaillist[Int(indexPath.row)].tweetVolume ?? 0)+"트윗"
+           
                        
-                 let rowData = trenddetaillist[indexPath.row]
-                        
-               
-                    
-                    detailcell.TitleLabel.text = rowData.name
-                   detailcell.VolumeLabel2.text = String(self.trenddetaillist[Int(indexPath.row)].tweetVolume ?? 0)+"트윗"
-                   
-                               
-                     return detailcell
+             return detailcell
                                
      
         
         
     }
-    var trenddetaillist:[Trend] = []
-
-    var trendDetail : Trend? = nil
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        TableViewDetail.delegate = self
-        TableViewDetail.dataSource = self
-        /*getTrendsTwitter()*/
-        
-        
-        MyApi.shared.getTrend{ result in
-                
-            self.trenddetaillist = result
-            self.TableViewDetail.reloadData()
-        }
-    
-
-        func viewDidAppear(_ animated: Bool) {
-        
-        }
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            
-            
-            
-            
-            // performSegue(withIdentifier: "trendUrl", sender: self.trenddetaillist[indexPath.row])
-         }
-         
 
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        let destination = segue.destination as! TwitDisplayViewController
+        let codersHighURL = URL(string: "http://www.apple.com")
+        destination.twitUrl = codersHighURL
+        
+        
+        
     }
-    */
 
 }
     
-}
+
