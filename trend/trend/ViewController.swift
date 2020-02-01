@@ -114,7 +114,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.identifier == "trendDetail"{
             let trendlist = sender as? Trend
             if trendlist != nil{
-                let detailController1 = segue.destination as? TrendListDetailViewController1
+                let detailController1 = segue.destination as? TrendListViewController
                 if detailController1 != nil {
                     detailController1!.trendDetail = trendlist
                 }
