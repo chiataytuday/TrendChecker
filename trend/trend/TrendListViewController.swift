@@ -20,10 +20,9 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     var trendDetail : Trend? = nil
     
-    var hashtag:[Trend] = []
-    var entertain:[Trend] = []
-    var polictics:[Trend] = []
-    var etc:[Trend] = []
+    
+    var timelineData:[[Trend]] = []
+  
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -33,13 +32,9 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
      
 
         MyApi.shared.getTrendsB{ result in
-            self.hashtag = result[0]
-            self.entertain = result[1]
-            self.polictics = result[2]
-            self.etc = result[3]
-
+            self.timelineData = result
             
-         //  self.trenddetaillist = result
+           // self.trenddetaillist = result
            self.tableViewDetail.reloadData()
         }
     }
