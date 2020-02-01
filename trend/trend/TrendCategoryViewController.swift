@@ -56,25 +56,14 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         TableViewMain.delegate = self
         TableViewMain.dataSource = self
        
-        
-        var printResult:[Trend] = []
-          var hashtag: [Trend] = []
 
           MyApi.shared.getTrendsB { result in
             self.trendsData = result
+            print(self.trendsData[0])
             self.trendlist = result.map { $0.count > 0 ? $0[0] : Trend(name: "로딩 중", url: nil, query: nil, tweetVolume:  nil) }
             self.isLoaded = true
             self.TableViewMain.reloadData()
-//              print(result)
-//              printResult = result
-//
-//              printResult = result.filter { !$0.name.hasPrefix("#") }//해시태그 이슈 제외
-//              hashtag = result.filter { $0.name.hasPrefix("#") }
-//
-//              print(printResult)
-//              print(hashtag)
-//
-//              MyApi.shared.getTimeLine(query: "\(printResult[0].name)", completion: {_ in
+            
           }
     }
     

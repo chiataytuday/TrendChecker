@@ -20,15 +20,26 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     var trendDetail : Trend? = nil
     
+    var hashtag:[Trend] = []
+    var entertain:[Trend] = []
+    var polictics:[Trend] = []
+    var etc:[Trend] = []
+    
     override func viewDidLoad() {
        super.viewDidLoad()
 
        tableViewDetail.delegate = self
        tableViewDetail.dataSource = self
      
-       
-       MyApi.shared.getTrend{ result in
-           self.trenddetaillist = result
+
+        MyApi.shared.getTrendsB{ result in
+            self.hashtag = result[0]
+            self.entertain = result[1]
+            self.polictics = result[2]
+            self.etc = result[3]
+
+            
+         //  self.trenddetaillist = result
            self.tableViewDetail.reloadData()
         }
     }
@@ -46,8 +57,6 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
        
          let rowData = trenddetaillist[indexPath.row]
                 
-       
-            
         detailcell.TitleLabel.text = rowData.name
         detailcell.VolumeLabel2.text = String(self.trenddetaillist[Int(indexPath.row)].tweetVolume ?? 0)+"트윗"
            
