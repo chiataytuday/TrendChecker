@@ -29,7 +29,6 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
                 let dataString :String = data.name
                 print(dataString)
                 MyApi.shared.getTimeLine(query: dataString, completion: {text in
-        
                     
                 })
                 allcell.VolumeLabel.text = String(data.tweetVolume ?? 0)+"트윗"
