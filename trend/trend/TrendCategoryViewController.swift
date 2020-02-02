@@ -62,8 +62,10 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
            // print(self.trendsData[0])
             self.trendlist = result.map { $0.count > 0 ? $0[0] : Trend(name: "로딩 중", url: nil, query: nil, tweetVolume:  nil) }
             self.isLoaded = true
-             
-            self.TableViewMain.reloadData() //Main
+            DispatchQueue.main.async {
+                                            self.TableViewMain.reloadData() //Main
+                                        }
+           
                              
             
           }
