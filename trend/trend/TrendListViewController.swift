@@ -54,7 +54,7 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
             }
                                 
                    
-          self.trenddetaillist = result[1]
+          //self.trenddetaillist = result[2]
              DispatchQueue.main.async {
                                 self.tableViewDetail.reloadData() //Main
                             }
@@ -87,11 +87,11 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TwitDisplayViewController
-        if  let url = trenddetaillist[2] as? String {
-        let tweetUrl = (URL(string:url)!)
+       // if  let url = Trend() {
+        let tweetUrl = (URL(string:"url")!)
         destination.twitUrl = tweetUrl
         
-        }
+      //  }
     }
 
 }
