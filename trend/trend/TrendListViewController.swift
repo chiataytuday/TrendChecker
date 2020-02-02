@@ -17,11 +17,11 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var tableViewDetail: UITableView!
     
     var trenddetaillist:[Trend] = []
-    var rows:[Int] = []
+    var selectRow = [Int]()
     var trendDetail : Trend? = nil
+    var timelineData:[[Trend]] = []
     
-    
-   var timelineData:[[Trend]] = []
+ 
   
     
     override func viewDidLoad() {
@@ -30,17 +30,28 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
        tableViewDetail.delegate = self
        tableViewDetail.dataSource = self
      
-
+        
         MyApi.shared.getTrendsB{ result in
           //self.timelineData = result
-            
-           self.trenddetaillist = result[0]
-            self.trenddetaillist = result[1]
-            self.trenddetaillist = result[2]
-            self.trenddetaillist = result[3]
-                      
-                      
-                      
+         /*   if self.selectRow[0] == 2 {
+                self.trenddetaillist = result[0]
+                self.tableViewDetail.reloadData()
+            }
+            else if self.selectRow[1] == 4{
+                                    self.trenddetaillist = result[1]
+                                    self.tableViewDetail.reloadData()
+            }
+            else if self.selectRow[2] == 6{
+                                    self.trenddetaillist = result[2]
+                                    self.tableViewDetail.reloadData()
+            }
+            else  self.selectRow[3] == 8 {
+                                    self.trenddetaillist = result[3]
+                                    self.tableViewDetail.reloadData()
+            }
+                                
+                     */
+            self.trenddetaillist = result[0]
            self.tableViewDetail.reloadData()
         }
     }
@@ -50,7 +61,7 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
    }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return self.timelineData.count
+     return self.trenddetaillist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,9 +82,8 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TwitDisplayViewController
-        let codersHighURL = URL(string: "http://www.apple.com")
-        destination.twitUrl = codersHighURL
-        
+        let twitUrl = URL(string: "http://www.apple.com")
+        destination.twitUrl = twitUrl
         
         
     }
