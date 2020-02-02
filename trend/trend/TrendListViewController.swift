@@ -16,12 +16,12 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var tableViewDetail: UITableView!
     
-    var trenddetaillist:[[Trend]] = []
-
+    var trenddetaillist:[Trend] = []
+    var rows:[Int] = []
     var trendDetail : Trend? = nil
     
     
-   // var timelineData:[[Trend]] = []
+   var timelineData:[[Trend]] = []
   
     
     override func viewDidLoad() {
@@ -32,19 +32,25 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
      
 
         MyApi.shared.getTrendsB{ result in
-          // self.timelineData = result
+          //self.timelineData = result
             
-           //self.trenddetaillist = result
+           self.trenddetaillist = result[0]
+            self.trenddetaillist = result[1]
+            self.trenddetaillist = result[2]
+            self.trenddetaillist = result[3]
+                      
+                      
+                      
            self.tableViewDetail.reloadData()
         }
     }
 
-    /*override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
    
-   }*/
+   }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return self.trenddetaillist.count
+     return self.timelineData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +60,7 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
                 
         detailcell.TitleLabel.text = rowData.name
         detailcell.VolumeLabel2.text = String(self.trenddetaillist[Int(indexPath.row)].tweetVolume ?? 0)+"트윗"
-           
+            
                        
              return detailcell
                                
