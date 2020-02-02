@@ -13,7 +13,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
     var trendlist:[Trend] = []
     var categories:[String] = ["# 해시태그 이슈","# 정치/사회/경제","# 연예/스포츠","# 그외 이슈"]
     var isLoaded:Bool = false
-   
+    var timelineData:[[Trend]] = []
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isLoaded {
@@ -74,6 +74,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
             let trendlist = sender as? [Trend]
             if trendlist != nil{
                 let detailController1 = segue.destination as? TrendListViewController
+                
                 if detailController1 != nil {
                     print(trendlist)
                 //detailController1!.trendDetail = trendlist
@@ -86,6 +87,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row % 2 == 1 {
                 performSegue(withIdentifier: "trendDetail", sender: self.trendsData[Int(indexPath.row/2)])
+                    
             }
         }
     
