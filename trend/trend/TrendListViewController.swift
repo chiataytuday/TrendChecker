@@ -33,25 +33,25 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         MyApi.shared.getTrendsB{ result in
           //self.timelineData = result
-         /*   if self.selectRow[0] == 2 {
+            if self.selectRow[0] == 2 {
                 self.trenddetaillist = result[0]
-                self.tableViewDetail.reloadData()
+              
             }
             else if self.selectRow[1] == 4{
                                     self.trenddetaillist = result[1]
-                                    self.tableViewDetail.reloadData()
+                                    
             }
             else if self.selectRow[2] == 6{
                                     self.trenddetaillist = result[2]
-                                    self.tableViewDetail.reloadData()
+                                 
             }
-            else  self.selectRow[3] == 8 {
+            else if  self.selectRow[3] == 8 {
                                     self.trenddetaillist = result[3]
-                                    self.tableViewDetail.reloadData()
+                                   
             }
                                 
-                     */
-            self.trenddetaillist = result[0]
+                   
+           // self.trenddetaillist = result[0]
            self.tableViewDetail.reloadData()
         }
     }
