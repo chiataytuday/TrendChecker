@@ -62,7 +62,9 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
            // print(self.trendsData[0])
             self.trendlist = result.map { $0.count > 0 ? $0[0] : Trend(name: "로딩 중", url: nil, query: nil, tweetVolume:  nil) }
             self.isLoaded = true
-            self.TableViewMain.reloadData()
+             
+                                 self.TableViewMain.reloadData() //Main
+                             
             
           }
     }
@@ -72,7 +74,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "trendDetail"{
             let trendlist = sender as? [Trend]
-            if trendlist != nil{
+             if trendlist != nil{
                 var detailController1 = segue.destination as? TrendListViewController
                
                 let indexPathRow = TableViewMain.indexPathForSelectedRow //선택된 테이블뷰셀의 행
@@ -88,8 +90,9 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
 
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             if indexPath.row % 2 == 1 {
-                performSegue(withIdentifier: "trendDetail", sender: self.trendsData[Int(indexPath.row/2)])
-                    
+               
+                    performSegue(withIdentifier: "trendDetail", sender: self.trendsData[Int(indexPath.row/2)])
+            
             }
         }
     
