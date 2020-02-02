@@ -73,8 +73,10 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         if segue.identifier == "trendDetail"{
             let trendlist = sender as? [Trend]
             if trendlist != nil{
-                let detailController1 = segue.destination as? TrendListViewController
-                
+                var detailController1 = segue.destination as? TrendListViewController
+               
+                let indexPathRow = TableViewMain.indexPathForSelectedRow //선택된 테이블뷰셀의 행
+                detailController1?.rows = [(indexPathRow?.row)!] // 다음뷰로 넘길 선택된행의 값
                 if detailController1 != nil {
                     print(trendlist)
                 //detailController1!.trendDetail = trendlist
