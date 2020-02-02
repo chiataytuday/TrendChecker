@@ -16,12 +16,12 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var tableViewDetail: UITableView!
     
-    var trenddetaillist:[Trend] = []
+    var trenddetaillist:[[Trend]] = []
 
     var trendDetail : Trend? = nil
     
     
-    var timelineData:[[Trend]] = []
+   // var timelineData:[[Trend]] = []
   
     
     override func viewDidLoad() {
@@ -32,16 +32,16 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
      
 
         MyApi.shared.getTrendsB{ result in
-            self.timelineData = result
+          // self.timelineData = result
             
-           // self.trenddetaillist = result
+           //self.trenddetaillist = result
            self.tableViewDetail.reloadData()
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    /*override func viewDidAppear(_ animated: Bool) {
    
-   }
+   }*/
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      return self.trenddetaillist.count
