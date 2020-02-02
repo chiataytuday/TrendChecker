@@ -35,8 +35,6 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
           self.timelineData = result
          
             print(self.timeLine)
-        
-            print(self.selectRow)
             
             self.trenddetaillist = self.timeLine
            /* if self.selectRow == [1] {
