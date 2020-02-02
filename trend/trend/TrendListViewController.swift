@@ -17,11 +17,11 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var tableViewDetail: UITableView!
     
     var trenddetaillist:[Trend] = []
-    var selectRow = [Int]()
+    var selectRow:[Int] = []
     var trendDetail : Trend? = nil
     var timelineData:[[Trend]] = []
     
- 
+
   
     
     override func viewDidLoad() {
@@ -32,26 +32,29 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
      
         
         MyApi.shared.getTrendsB{ result in
-          /*self.timelineData = result
-           if self.selectRow[0] == 2 {
+          self.timelineData = result
+         
+        
+            
+            if self.selectRow == [1] {
                 self.trenddetaillist = result[0]
               
             }
-            else if self.selectRow[1] == 4{
+            else if self.selectRow == [3]{
                                     self.trenddetaillist = result[1]
                                     
             }
-            else if self.selectRow[2] == 6{
+            else if self.selectRow == [5]{
                                     self.trenddetaillist = result[2]
                                  
             }
-            else if  self.selectRow[3] == 8 {
+            else if  self.selectRow == [7] {
                                     self.trenddetaillist = result[3]
                                    
-            }*/
+            }
                                 
                    
-           self.trenddetaillist = result[1]
+          self.trenddetaillist = result[1]
              DispatchQueue.main.async {
                                 self.tableViewDetail.reloadData() //Main
                             }
@@ -84,10 +87,11 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TwitDisplayViewController
-        let twitUrl = URL(string: "http://www.apple.com")
-        destination.twitUrl = twitUrl
+        if  let url = trenddetaillist[2] as? String {
+        let tweetUrl = (URL(string:url)!)
+        destination.twitUrl = tweetUrl
         
-        
+        }
     }
 
 }
