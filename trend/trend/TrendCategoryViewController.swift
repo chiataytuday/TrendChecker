@@ -80,6 +80,9 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
                 
                     var detailController1 = segue.destination as? TrendListViewController
                
+                
+                detailController1?.timeLine = trendlist!
+                
                 let indexPathRow = TableViewMain.indexPathForSelectedRow //선택된 테이블뷰셀의 행
                 detailController1?.selectRow = [(indexPathRow?.row)!] // 다음뷰로 넘길 선택된행의 값
                 if detailController1 != nil {
