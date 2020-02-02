@@ -20,9 +20,10 @@ class TwitDisplayViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
       
-        let request = URLRequest(url: twitUrl!)
+         let request = URLRequest(url: twitUrl!) 
+            
         twitWebView.load(request)
-
+        }
 
      
     }
@@ -37,4 +38,4 @@ class TwitDisplayViewController: UIViewController {
     }
     */
 
-}
+
