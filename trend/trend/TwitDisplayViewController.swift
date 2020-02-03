@@ -1,23 +1,32 @@
 //
-//  TrendListDetailViewController2.swift
+//  TwitDisplayViewController.swift
 //  trend
 //
-//  Created by user on 2020/01/21.
+//  Created by user on 2020/02/01.
 //  Copyright © 2020 linc. All rights reserved.
 //
 
 import UIKit
+import WebKit
 
-class TrendListDetailViewController2: UIViewController {
+class TwitDisplayViewController: UIViewController {
 
+    @IBOutlet weak var twitWebView: WKWebView!
+    var twitUrl : URL?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-           
-       }
+      
+         let request = URLRequest(url: twitUrl!) 
+            
+        twitWebView.load(request)
+        }
+
+     
+    }
 
     /*
     // MARK: - Navigation
@@ -29,4 +38,4 @@ class TrendListDetailViewController2: UIViewController {
     }
     */
 
-}
+

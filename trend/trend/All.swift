@@ -11,7 +11,7 @@ import UIKit
 class All : UITableViewCell {
    
     @IBOutlet weak var AllLabel: UILabel!
-    
+    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var VolumeLabel: UILabel!
     
 }
