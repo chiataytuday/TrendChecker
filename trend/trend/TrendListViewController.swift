@@ -21,7 +21,7 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
     var trendDetail : Trend? = nil
     var timelineData:[[Trend]] = []
     
-
+    var timeLine : [Trend] = []
   
     
     override func viewDidLoad() {
@@ -34,9 +34,10 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
         MyApi.shared.getTrendsB{ result in
           self.timelineData = result
          
-        
+            print(self.timeLine)
             
-            if self.selectRow == [1] {
+            self.trenddetaillist = self.timeLine
+           /* if self.selectRow == [1] {
                 self.trenddetaillist = result[0]
               
             }
@@ -51,10 +52,9 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
             else if  self.selectRow == [7] {
                                     self.trenddetaillist = result[3]
                                    
-            }
+            }*/
                                 
-                   
-          //self.trenddetaillist = result[2]
+
              DispatchQueue.main.async {
                                 self.tableViewDetail.reloadData() //Main
                             }
@@ -96,4 +96,5 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
 }
     
+
 

@@ -11,7 +11,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var TableViewMain: UITableView!
     
     var trendlist:[Trend] = []
-    var categories:[String] = ["# 해시태그 이슈","# 연예/스포츠","# 정치/사회/경제","# 그외 이슈"]
+    var categories:[String] = [" # 해시태그 이슈"," # 연예 / 스포츠"," # 정치 / 사회 / 경제"," # 그 외 이슈"]
     var isLoaded:Bool = false
     var timelineData:[[Trend]] = []
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,6 +26,11 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
                 let data = self.trendlist[Int(((indexPath.row + 1) / 2)-1)]
                 allcell.AllLabel.text = data.name
                 allcell.contentLabel.text = data.name
+                let dataString :String = data.name
+                print(dataString)
+                MyApi.shared.getTimeLine(query: dataString, completion: {text in
+                    
+                })
                 allcell.VolumeLabel.text = String(data.tweetVolume ?? 0)+"트윗"
                           
                 return allcell
@@ -80,6 +85,9 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
                 
                     var detailController1 = segue.destination as? TrendListViewController
                
+                
+                detailController1?.timeLine = trendlist!
+                
                 let indexPathRow = TableViewMain.indexPathForSelectedRow //선택된 테이블뷰셀의 행
                 detailController1?.selectRow = [(indexPathRow?.row)!] // 다음뷰로 넘길 선택된행의 값
                 if detailController1 != nil {

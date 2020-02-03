@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trend  #Checker-->
+        <!--Trending #Topic Checker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TrendCategoryViewController" customModule="trend" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,18 +25,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sz-OJ-jgI">
-                                                    <rect key="frame" x="24" y="11.5" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sz-OJ-jgI">
+                                                    <rect key="frame" x="24" y="11.5" width="43.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="2sz-OJ-jgI" firstAttribute="leading" secondItem="wUc-3H-4Dm" secondAttribute="leading" constant="24" id="8BN-uX-Uaj"/>
                                                 <constraint firstItem="2sz-OJ-jgI" firstAttribute="centerY" secondItem="wUc-3H-4Dm" secondAttribute="centerY" id="wL3-qZ-J8l"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="CategoryNameLabel" destination="2sz-OJ-jgI" id="lkq-tE-70O"/>
                                         </connections>
@@ -94,7 +97,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gCw-cS-N9F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3h8-o4-YoC"/>
                             <constraint firstItem="gCw-cS-N9F" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KHy-eX-bLh"/>
@@ -103,7 +106,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Trend  #Checker" id="m5i-7Y-x4m"/>
+                    <navigationItem key="navigationItem" title="Trending #Topic Checker" id="m5i-7Y-x4m"/>
                     <connections>
                         <outlet property="TableViewMain" destination="gCw-cS-N9F" id="Iz3-2B-lpm"/>
                         <segue destination="OMt-sF-5IE" kind="show" identifier="trendDetail" id="yyi-rK-AXB"/>
@@ -161,7 +164,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nTa-5z-mMW" firstAttribute="leading" secondItem="h6Y-CZ-bGL" secondAttribute="leading" id="BLi-Kc-TpH"/>
                             <constraint firstItem="nTa-5z-mMW" firstAttribute="trailing" secondItem="h6Y-CZ-bGL" secondAttribute="trailing" id="CdO-Kw-tHK"/>
@@ -170,7 +173,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h6Y-CZ-bGL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Ge-Cz-GGq"/>
+                    <navigationItem key="navigationItem" title="Trending #Topic Checker" id="5Ge-Cz-GGq" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
                         <outlet property="TableViewDetail" destination="nTa-5z-mMW" id="rIJ-d2-Uny"/>
                     </connections>
@@ -196,7 +199,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iAJ-wg-Bm5" firstAttribute="trailing" secondItem="5sD-vf-p3a" secondAttribute="trailing" id="5gh-pN-ImF"/>
                             <constraint firstItem="iAJ-wg-Bm5" firstAttribute="bottom" secondItem="5sD-vf-p3a" secondAttribute="bottom" id="Ez9-qA-m3o"/>
