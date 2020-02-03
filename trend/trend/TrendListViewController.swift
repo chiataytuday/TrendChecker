@@ -87,11 +87,11 @@ class TrendListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TwitDisplayViewController
-       // if  let url = Trend() {
-        let tweetUrl = (URL(string:"url")!)
+        
+        let tweetUrl = URL(string:"")
         destination.twitUrl = tweetUrl
         
-      //  }
+       
     }
 
 }
