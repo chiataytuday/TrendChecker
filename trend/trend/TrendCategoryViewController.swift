@@ -61,7 +61,7 @@ class TrendCategoryViewController: UIViewController, UITableViewDataSource, UITa
         TableViewMain.delegate = self
         TableViewMain.dataSource = self
        
-
+      
           MyApi.shared.getTrendsB { result in
             self.trendsData = result
            // print(self.trendsData[0])
